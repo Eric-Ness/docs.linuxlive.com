@@ -1,0 +1,14 @@
+---
+// The header's end: back to linuxlive.com and the Workshop, then Starlight's own icons.
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+---
+<a class="ll-home" href="https://linuxlive.com/">linuxlive.com</a>
+<a class="ll-cta" href="https://linuxlive.com/workshop/">Make a distro</a>
+<Default />
+<style>
+  .ll-home { color: var(--sl-color-gray-2); text-decoration: none; font-size: var(--sl-text-sm); white-space: nowrap; }
+  .ll-home:hover { color: var(--sl-color-white); }
+  .ll-cta { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 6px; background: var(--ll-orange); color: #121821; font-weight: 600; font-size: var(--sl-text-sm); text-decoration: none; white-space: nowrap; }
+  .ll-cta:hover { filter: brightness(0.96); color: #121821; }
+  @media (max-width: 50rem) { .ll-cta { display: none; } }
+</style>

@@ -1,0 +1,86 @@
+/* linuxlive.com's look on Starlight: white and ink, IBM Plex for text and code,
+   Newsreader for headings, and the orange kept for the one main action.
+   Light only (src/components/ThemeProvider.astro), so only light values. */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --ll-orange: #ff7a1a;
+  --sl-font: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --sl-font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --ll-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+
+  --sl-color-accent-low: #fff3ea;
+  --sl-color-accent: #a8410b;
+  --sl-color-accent-high: #6f2a05;
+
+  /* In Starlight's light theme "white" is the darkest text and gray-7 the softest fill. */
+  --sl-color-white: #121821;
+  --sl-color-gray-1: #2a323c;
+  --sl-color-gray-2: #3d4752;
+  --sl-color-gray-3: #5b6573;
+  --sl-color-gray-4: #8a939e;
+  --sl-color-gray-5: #d5dbe2;
+  --sl-color-gray-6: #e4e7eb;
+  --sl-color-gray-7: #f5f6f8;
+  --sl-color-black: #ffffff;
+
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #ffffff;
+  --sl-color-hairline-light: #e4e7eb;
+  --sl-color-hairline: #e4e7eb;
+  --sl-color-hairline-shade: #d5dbe2;
+  --sl-color-text-accent: #a8410b;
+}
+
+.site-title {
+  font-family: var(--sl-font-mono);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--sl-color-white);
+}
+
+h1#_top,
+.sl-markdown-content :is(h2, h3) {
+  font-family: var(--ll-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.sl-markdown-content :is(h2) { font-size: 1.85rem; }
+.sl-markdown-content :is(h3) { font-size: 1.4rem; }
+
+/* Tables carry the spec reference; keep them readable and let code stay whole. */
+.sl-markdown-content table { font-size: 0.9rem; }
+.sl-markdown-content table code { white-space: nowrap; }
+
+/* Screenshots: a hairline frame so white pages sit apart from the page. */
+.sl-markdown-content img:not(.no-frame) {
+  border: 1px solid var(--sl-color-gray-6);
+  border-radius: 8px;
+}
+.sl-markdown-content figure { margin: 1.5rem 0; }
+.sl-markdown-content figcaption { color: var(--sl-color-gray-3); font-size: var(--sl-text-sm); margin-top: 0.5rem; }
+
+/* The Workshop's own labels, written as they appear on screen. */
+.sl-markdown-content .ui {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* The home page's hero: the main action is orange, as on linuxlive.com. */
+.hero .sl-link-button.primary,
+.sl-link-button.primary {
+  background: var(--ll-orange);
+  border-color: var(--ll-orange);
+  color: #121821;
+}
+
+/* The page you are on: linuxlive.com's "picked" tint with ink text, not a solid block. */
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover,
+.sidebar-content a[aria-current='page']:focus {
+  background-color: var(--sl-color-accent-low);
+  color: var(--sl-color-white);
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--ll-orange);
+}

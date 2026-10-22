@@ -1,0 +1,41 @@
+---
+title: linuxlive docs
+description: How to make your own live Linux distro with linuxlive.com, from the Workshop to a USB stick.
+template: splash
+hero:
+  tagline: Make your own Linux. Pick a base, a desktop, apps and branding; linuxlive builds an ISO, boots it five ways, checks it, and hands it to you.
+  actions:
+    - text: Make your first distro
+      link: /start/first-distro/
+      variant: primary
+    - text: How it works
+      link: /start/how-it-works/
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="The Workshop">
+    Seven steps on linuxlive.com: [Base](/workshop/base/), [Desktop](/workshop/desktop/), [Apps](/workshop/apps/), [Look](/workshop/look/), [Settings](/workshop/settings/), [Extras](/workshop/extras/) and [Get it](/workshop/get-it/). Each page says what every choice does on the finished computer.
+  </Card>
+  <Card title="Your distros">
+    Change a distro and save a new version, rebuild it every month, move it to a newer linuxlive, or put it in the Library: [My distros](/distros/my-distros/).
+  </Card>
+  <Card title="linuxlive.yaml">
+    Writing a spec by hand: [every field](/spec/reference/), the [catalog](/spec/catalog/) of apps, languages and keyboards, [boot splashes](/spec/boot-splash/) and the [dock](/spec/dock/).
+  </Card>
+  <Card title="When something goes wrong">
+    What the [build checks](/help/build-checks/) mean, [why a build fails](/help/failed-builds/), and booting in [VirtualBox](/help/virtualbox/) or from a [USB stick](/help/usb-stick/).
+  </Card>
+</CardGrid>
+
+## Three ways to build
+
+<CardGrid>
+  <LinkCard title="Build it for me" description="linuxlive.com builds it on its own server. Sign in with GitHub; a download link comes in about 20 minutes." href="/workshop/get-it/#build-it-for-me" />
+  <LinkCard title="Build it in my GitHub" description="Your spec and art go into a new repository of yours, and GitHub builds and boot-tests it, free." href="/workshop/get-it/#build-it-in-my-github" />
+  <LinkCard title="Download the kit" description="A .zip with the spec, the art and a README. Build it anywhere, including on your own Linux." href="/workshop/get-it/#download-the-kit" />
+</CardGrid>
+
+[Compare the ways to build](/start/ways-to-build/), or read the [changelog](/changelog/) to see what each linuxlive release added.
